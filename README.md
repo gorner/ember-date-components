@@ -13,8 +13,11 @@ An Ember add-on which provides pure Ember-based date picker components.
 
 ## Installation
 
-* `ember install ember-moment` - This is a dependency that you will need to install manually
+* `ember install ember-moment` - This is a dependency that you will need to install manually. You may also need to manually install `moment` (for `ember-moment` v10+).
+* `ember install ember-basic-dropdown` - same; version 8 or above required
 * `ember install ember-date-components`
+* Additional peer dependencies may be required depending on your setup
+* Add `<BasicDropdownWormhole />` to your application.hbs or equivalent, if it isn't there already
 
 ## Basic Usage
 

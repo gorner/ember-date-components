@@ -33,8 +33,8 @@ jobs:
         # Keep this in sync with config/ember-try.js
         ember:
           [
-            ember-lts-4.4,
-            ember-lts-4.8,
+            ember-lts-4.12,
+            ember-lts-5.4,
             ember-release,
           ]
 

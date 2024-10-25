@@ -8,7 +8,8 @@ module.exports = function (defaults) {
       importBootstrapTheme: true,
       bootstrapVersion: 4,
       importBootstrapCSS: false,
-      whitelist: ['bs-nav', 'bs-navbar', 'bs-dropdown', 'bs-collapse'],
+      include: ['bs-nav', 'bs-navbar', 'bs-dropdown', 'bs-collapse'],
+      insertEmberWormholeElementToDom: false,
     },
     'ember-prism': {
       theme: 'twilight',

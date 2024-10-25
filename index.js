@@ -32,12 +32,5 @@ module.exports = {
         path.join(__dirname, 'app', 'styles')
       );
     }
-  },
-
-  contentFor(type, config) {
-    let emberBasicDropdown = this.addons.find(
-      (a) => a.name === 'ember-basic-dropdown'
-    );
-    return emberBasicDropdown.contentFor(type, config);
-  },
+  }
 };
