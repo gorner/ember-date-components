@@ -8,7 +8,7 @@
 
 <h2>Date Picker</h2>
 
-<CodeBlock @language="javascript">import { selectDate, getSelectedDate, getDatePicker } from 'ember-date-components/test-support/helpers/date-picker';
+<CodeBlock @language="javascript">import { selectDate, getSelectedDate, getDatePicker } from '@gorner/ember-date-components/test-support/helpers/date-picker';
 
 await selectDate('.dom-selector-or-element', moment());
 
@@ -35,7 +35,7 @@ datepicker.buttonText();</CodeBlock>
 
 <h2>Time Picker</h2>
 
-<CodeBlock @language="javascript">import { selectTime, getSelectedTime } from 'ember-date-components/test-support/helpers/time-picker';
+<CodeBlock @language="javascript">import { selectTime, getSelectedTime } from '@gorner/ember-date-components/test-support/helpers/time-picker';
 
 await selectTime('.dom-selector-or-element', moment());
 await selectTime('.dom-selector-or-element', '15:00');
@@ -45,13 +45,13 @@ let time = await getSelectedTime('.dom-selector-or-element');</CodeBlock>
 
 <h2>Date-Time Picker</h2>
 
-<CodeBlock @language="javascript">import { selectDateTime } from 'ember-date-components/test-support/helpers/date-picker';
+<CodeBlock @language="javascript">import { selectDateTime } from '@gorner/ember-date-components/test-support/helpers/date-picker';
 
 await selectDateTime('.dom-selector-or-element', moment());</CodeBlock>
 
 <h2>Date Range Picker</h2>
 
-<CodeBlock @language="javascript">import { selectDateRange, getSelectedDate, getDatePicker } from 'ember-date-components/test-support/helpers/date-picker';
+<CodeBlock @language="javascript">import { selectDateRange, getSelectedDate, getDatePicker } from '@gorner/ember-date-components/test-support/helpers/date-picker';
 
 await selectDateRange('.dom-selector-or-element', dateFrom, dateTo);
 

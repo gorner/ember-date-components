@@ -1,4 +1,4 @@
 export {
   default,
   isEqualDay,
-} from 'ember-date-components/helpers/is-equal-day';
+} from '@gorner/ember-date-components/helpers/is-equal-day';

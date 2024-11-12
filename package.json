@@ -1,6 +1,6 @@
 {
-  "name": "ember-date-components",
-  "version": "4.0.1",
+  "name": "@gorner/ember-date-components",
+  "version": "5.0.0-alpha.0",
   "description": "An Ember add-on which provides pure Ember-based date picker components.",
   "scripts": {
     "build": "ember build --environment=production",
@@ -100,7 +100,7 @@
     "date-range-picker",
     "datepicker"
   ],
-  "repository": "https://github.com/mydea/ember-date-components",
+  "repository": "https://github.com/gorner/ember-date-components",
   "license": "MIT",
   "author": "Francesco Novy <francesconovy@gmail.com>",
   "directories": {

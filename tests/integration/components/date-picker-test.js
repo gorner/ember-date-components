@@ -9,7 +9,7 @@ import {
   selectDate,
   selectDateRange,
   getSelectedDate,
-} from 'ember-date-components/test-support/helpers/date-picker';
+} from '@gorner/ember-date-components/test-support/helpers/date-picker';
 import settled from '@ember/test-helpers/settled';
 
 module('Integration | Component | date-picker', function (hooks) {

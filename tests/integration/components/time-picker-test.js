@@ -6,7 +6,7 @@ import moment from 'moment';
 import {
   selectTime,
   getSelectedTime,
-} from 'ember-date-components/test-support/helpers/time-picker';
+} from '@gorner/ember-date-components/test-support/helpers/time-picker';
 import { compareTimes } from 'dummy/tests/helpers/compare-times';
 
 module('Integration | Component | time-picker', function (hooks) {

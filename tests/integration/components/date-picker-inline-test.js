@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { selectDate } from 'ember-date-components/test-support/helpers/date-picker';
+import { selectDate } from '@gorner/ember-date-components/test-support/helpers/date-picker';
 import moment from 'moment';
 
 module('Integration | Component | date-picker-inline', function (hooks) {

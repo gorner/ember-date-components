@@ -1,5 +1,11 @@
 # Changelog
 
+v5.0.0-alpha.0
+
+- [INTERNAL] Update dependencies
+- [BREAKING] Require Ember v4.12+ and ember-basic-dropdown v8+; see README for more information.
+- [BREAKING] If you used the original ember-date-components, you will need to update any `import` statements to use `from '@gorner/ember-date-components/...';`.
+
 v4.0.1
 
 - [BUGFIX] Ensure date picker can be re-opened after closing it [#199](https://github.com/mydea/ember-date-components/pull/199)
@@ -77,8 +83,8 @@ v2.0.0
 - Add `selectDate` test helper
 - Improve usability of date-picker with keyboard
 - Refactor time-picker to be more keyboard friendly
-- Introduce new test helpers for date picker: `import { selectDate, getSelectedDate, selectDateTime } from 'ember-date-components/test-support/helpers/date-picker'`
-- Introduce new test helpers for time picker: `import { selectTime, getSelectedTime } from 'ember-date-components/test-support/helpers/time-picker'`
+- Introduce new test helpers for date picker: `import { selectDate, getSelectedDate, selectDateTime } from '@gorner/ember-date-components/test-support/helpers/date-picker'`
+- Introduce new test helpers for time picker: `import { selectTime, getSelectedTime } from '@gorner/ember-date-components/test-support/helpers/time-picker'`
 - Remove old test selectors (e.g. `data-test="day..."`)
 - Remove deprecated `interactWithDatePicker` test helper
 - Make sure `selectDate` test helper takes year into account

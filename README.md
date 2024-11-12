@@ -1,9 +1,14 @@
-# ember-date-components
+# @gorner/ember-date-components
 
-[![Build Status](https://travis-ci.org/mydea/ember-date-components.svg?branch=master)](https://travis-ci.org/mydea/ember-date-components)
-[![Ember Observer Score](https://emberobserver.com/badges/ember-date-components.svg)](https://emberobserver.com/addons/ember-date-components)
+[![Ember Observer Score](https://emberobserver.com/badges/@gorner/ember-date-components.svg)](https://emberobserver.com/addons/@gorner/ember-date-components)
 
 An Ember add-on which provides pure Ember-based date picker components.
+
+This is a fork of the original [ember-date-components](https://github.com/mydea/ember-date-components) which
+has been updated to support newer versions of Ember.js and of dependencies like ember-basic-dropdown.
+If you cannot use Ember.js v4.12+ and/or ember-basic-dropdown v8+, use the original addon,
+which is compatible with ember-basic-dropdown up to v7 if using the `overrides` (npm) or `resolutions` (Yarn)
+options in package.json.
 
 ## Compatibility
 
@@ -42,8 +47,8 @@ The date picker can also display custom options, e.g. 'Last 7 days'.
 It also provides test helpers to easily interact with the date picker in integration & acceptance tests:
 
 ```js
-import { selectDate, selectDateRange, getSelectedDate, selectDateTime } from 'ember-date-components/test-support/helpers/date-picker';
-import { selectTime, getSelectedTime } from 'ember-date-components/test-support/helpers/time-picker';
+import { selectDate, selectDateRange, getSelectedDate, selectDateTime } from '@gorner/ember-date-components/test-support/helpers/date-picker';
+import { selectTime, getSelectedTime } from '@gorner/ember-date-components/test-support/helpers/time-picker';
 
 await selectDate('.my-datepicker', moment());
 let momentInstance = await getSelectedDate('.my-datepicker');
@@ -57,4 +62,4 @@ await selectDateRange('.my-datepicker', dateFrom, dateTo);
 ```
 
 For more detailed instructions and examples,
-please visit the [documentation](http://mydea.github.io/ember-date-components/).
+please visit the [original repo's documentation](http://mydea.github.io/ember-date-components/).

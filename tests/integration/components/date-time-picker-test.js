@@ -5,8 +5,8 @@ import hbs from 'htmlbars-inline-precompile';
 import {
   getDatePicker,
   selectDateTime,
-} from 'ember-date-components/test-support/helpers/date-picker';
-import { selectTime } from 'ember-date-components/test-support/helpers/time-picker';
+} from '@gorner/ember-date-components/test-support/helpers/date-picker';
+import { selectTime } from '@gorner/ember-date-components/test-support/helpers/time-picker';
 import moment from 'moment';
 
 module('Integration | Component | date-time-picker', function (hooks) {

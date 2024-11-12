@@ -1,7 +1,7 @@
 import { click, triggerKeyEvent, fillIn, find } from '@ember/test-helpers';
 import moment from 'moment';
 import { assert } from '@ember/debug';
-import parseTime from 'ember-date-components/utils/parse-time';
+import parseTime from '@gorner/ember-date-components/utils/parse-time';
 
 export async function selectTime(element, val) {
   if (typeof element === 'string') {

@@ -1,7 +1,7 @@
 import { currentURL, visit } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
-import { getDatePicker } from 'ember-date-components/test-support/helpers/date-picker';
+import { getDatePicker } from '@gorner/ember-date-components/test-support/helpers/date-picker';
 import moment from 'moment';
 
 module('Acceptance | date picker', function (hooks) {
