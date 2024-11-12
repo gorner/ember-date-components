@@ -121,7 +121,7 @@ export default class TimePicker extends Component {
 
     assert(
       '<TimePicker>: You have to specify @onChange',
-      typeof this.args.onChange === 'function'
+      typeof this.args.onChange === 'function',
     );
   }
 
@@ -145,7 +145,7 @@ export default class TimePicker extends Component {
     let optionsLength = this.filteredOptions.length;
     this.selectedOptionIndex = Math.min(
       this.selectedOptionIndex + 1,
-      optionsLength - 1
+      optionsLength - 1,
     );
   }
 

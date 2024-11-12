@@ -47,7 +47,7 @@ module('Integration | Component | date-picker', function (hooks) {
       .dom('[data-test-date-picker-toggle-button]')
       .hasText(
         date.format('L'),
-        'Formatted value of default date is displayed in button.'
+        'Formatted value of default date is displayed in button.',
       );
   });
 
@@ -57,7 +57,7 @@ module('Integration | Component | date-picker', function (hooks) {
       assert.equal(
         date.format('YYYY-MM-DD'),
         moment().date(7).format('YYYY-MM-DD'),
-        'correct date is passed to action.'
+        'correct date is passed to action.',
       );
 
       assert.step('onChange is called');
@@ -87,7 +87,7 @@ module('Integration | Component | date-picker', function (hooks) {
       assert.equal(
         date.format('YYYY-MM-DD'),
         moment().date(7).format('YYYY-MM-DD'),
-        'correct date is passed to action.'
+        'correct date is passed to action.',
       );
 
       assert.step('onChange is called');
@@ -124,7 +124,7 @@ module('Integration | Component | date-picker', function (hooks) {
       .dom('[data-test-date-picker-toggle-button]')
       .hasText(
         date.format('L'),
-        'Formatted value of default date is displayed in button.'
+        'Formatted value of default date is displayed in button.',
       );
 
     let newDate = moment().add(1, 'day');
@@ -213,7 +213,7 @@ module('Integration | Component | date-picker', function (hooks) {
       .dom('[data-test-date-picker-toggle-button]')
       .hasText(
         moment('2021-04-24').format('L'),
-        'value in date picker is updated.'
+        'value in date picker is updated.',
       );
 
     assert.verifySteps([
@@ -234,7 +234,7 @@ module('Integration | Component | date-picker', function (hooks) {
       assert.equal(
         date.format('YYYY-MM-DD'),
         moment().date(7).format('YYYY-MM-DD'),
-        'correct date is passed'
+        'correct date is passed',
       );
 
       assert.step('onClose is called');
@@ -252,7 +252,7 @@ module('Integration | Component | date-picker', function (hooks) {
 
     assert.notOk(
       datePicker.isOpen(),
-      'date picker is closed after to-selection.'
+      'date picker is closed after to-selection.',
     );
 
     assert.verifySteps(['onChange is called', 'onClose is called']);
@@ -274,7 +274,7 @@ module('Integration | Component | date-picker', function (hooks) {
       .dom('.ember-basic-dropdown-trigger')
       .hasClass(
         'ember-basic-dropdown-trigger--in-place',
-        'The trigger has a special `--in-place` class'
+        'The trigger has a special `--in-place` class',
       );
   });
 
@@ -301,7 +301,7 @@ module('Integration | Component | date-picker', function (hooks) {
       .dom('.date-picker__day--selected')
       .hasAttribute(
         'data-test-date-picker-day',
-        `${date.year()}-${date.month()}-${date.date()}`
+        `${date.year()}-${date.month()}-${date.date()}`,
       );
   });
 
@@ -353,12 +353,12 @@ module('Integration | Component | date-picker', function (hooks) {
 
     assert
       .dom(
-        `button[data-test-date-picker-day="${disabledDates[0].year()}-${disabledDates[0].month()}-${disabledDates[0].date()}"]`
+        `button[data-test-date-picker-day="${disabledDates[0].year()}-${disabledDates[0].month()}-${disabledDates[0].date()}"]`,
       )
       .hasAttribute('disabled');
     assert
       .dom(
-        `button[data-test-date-picker-day="${disabledDates[1].year()}-${disabledDates[1].month()}-${disabledDates[1].date()}"]`
+        `button[data-test-date-picker-day="${disabledDates[1].year()}-${disabledDates[1].month()}-${disabledDates[1].date()}"]`,
       )
       .hasAttribute('disabled');
   });
@@ -411,19 +411,19 @@ module('Integration | Component | date-picker', function (hooks) {
           assert.equal(
             from.format('YYYY-MM-DD'),
             moment().date(7).format('YYYY-MM-DD'),
-            'correct date is passed as from-date.'
+            'correct date is passed as from-date.',
           );
           assert.equal(to, null, 'to-date is null');
         } else {
           assert.equal(
             from.format('YYYY-MM-DD'),
             moment().date(7).format('YYYY-MM-DD'),
-            'correct date is passed as from-date.'
+            'correct date is passed as from-date.',
           );
           assert.equal(
             to.format('YYYY-MM-DD'),
             moment().date(14).format('YYYY-MM-DD'),
-            'correct date is passed as to-date.'
+            'correct date is passed as to-date.',
           );
         }
 
@@ -443,14 +443,14 @@ module('Integration | Component | date-picker', function (hooks) {
 
       assert.ok(
         datePicker.isOpen(),
-        'date picker is not closed after from-selection.'
+        'date picker is not closed after from-selection.',
       );
 
       await datePicker.selectDate(moment().date(14));
 
       assert.notOk(
         datePicker.isOpen(),
-        'date picker is closed after to-selection.'
+        'date picker is closed after to-selection.',
       );
 
       assert.verifySteps(['onChange is called', 'onChange is called']);
@@ -466,7 +466,7 @@ module('Integration | Component | date-picker', function (hooks) {
         assert.equal(
           to.format('YYYY-MM-DD'),
           moment().date(7).format('YYYY-MM-DD'),
-          'correct date is passed as to-date.'
+          'correct date is passed as to-date.',
         );
 
         assert.step('onChange is called');
@@ -498,12 +498,12 @@ module('Integration | Component | date-picker', function (hooks) {
         assert.equal(
           from.format('YYYY-MM-DD'),
           moment().date(7).format('YYYY-MM-DD'),
-          'correct date is passed as from-date.'
+          'correct date is passed as from-date.',
         );
         assert.equal(
           to.format('YYYY-MM-DD'),
           moment().date(14).format('YYYY-MM-DD'),
-          'correct date is passed as to-date.'
+          'correct date is passed as to-date.',
         );
 
         assert.step('onClose is called');
@@ -522,14 +522,14 @@ module('Integration | Component | date-picker', function (hooks) {
 
       assert.ok(
         datePicker.isOpen(),
-        'date picker is not closed after from-selection.'
+        'date picker is not closed after from-selection.',
       );
 
       await datePicker.selectDate(moment().date(14));
 
       assert.notOk(
         datePicker.isOpen(),
-        'date picker is closed after to-selection.'
+        'date picker is closed after to-selection.',
       );
 
       assert.verifySteps([
@@ -576,7 +576,7 @@ module('Integration | Component | date-picker', function (hooks) {
         assert.equal(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
-          'correct date is passed to action.'
+          'correct date is passed to action.',
         );
 
         assert.step('onChange is called');
@@ -605,7 +605,7 @@ module('Integration | Component | date-picker', function (hooks) {
         assert.equal(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
-          'correct date is passed to action.'
+          'correct date is passed to action.',
         );
 
         assert.step('onChange is called');
@@ -634,7 +634,7 @@ module('Integration | Component | date-picker', function (hooks) {
         assert.equal(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
-          'correct date is passed to action.'
+          'correct date is passed to action.',
         );
 
         assert.step('onChange is called');
@@ -660,7 +660,7 @@ module('Integration | Component | date-picker', function (hooks) {
         assert.equal(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
-          'correct date is passed to action.'
+          'correct date is passed to action.',
         );
 
         assert.step('onChange is called');
@@ -686,7 +686,7 @@ module('Integration | Component | date-picker', function (hooks) {
         assert.equal(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
-          'correct date is passed to action.'
+          'correct date is passed to action.',
         );
 
         assert.step('onChange is called');
@@ -750,11 +750,11 @@ module('Integration | Component | date-picker', function (hooks) {
       let selectedDates = await getSelectedDate(this.element);
       assert.ok(
         selectedDates[0].isSame(this.dates[0], 'day'),
-        'date from is correct'
+        'date from is correct',
       );
       assert.ok(
         selectedDates[1].isSame(this.dates[1], 'day'),
-        'date to is correct'
+        'date to is correct',
       );
     });
 
@@ -792,7 +792,7 @@ module('Integration | Component | date-picker', function (hooks) {
 
       assert.ok(
         fromDate.isSame(this.dateRange[0], 'day'),
-        'from date is correct'
+        'from date is correct',
       );
       assert.ok(toDate.isSame(this.dateRange[1], 'day'), 'to date is correct');
     });

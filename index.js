@@ -21,7 +21,7 @@ module.exports = {
 
     // If the host app has ember-cli-sass installed, add the app folder to the sass include paths
     let hasEmberCliSass = !!target.project.addons.find(
-      (a) => a.name === 'ember-cli-sass'
+      (a) => a.name === 'ember-cli-sass',
     );
     if (hasEmberCliSass) {
       target.options.sassOptions = target.options.sassOptions || {};
@@ -29,8 +29,8 @@ module.exports = {
         target.options.sassOptions.includePaths || [];
 
       target.options.sassOptions.includePaths.push(
-        path.join(__dirname, 'app', 'styles')
+        path.join(__dirname, 'app', 'styles'),
       );
     }
-  }
+  },
 };

@@ -47,7 +47,7 @@ export default class DateTimePicker extends Component {
 
     assert(
       '<DateTimePicker>: You have to specify @onChange',
-      typeof this.args.onChange === 'function'
+      typeof this.args.onChange === 'function',
     );
   }
 

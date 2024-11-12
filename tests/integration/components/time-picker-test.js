@@ -28,7 +28,7 @@ module('Integration | Component | time-picker', function (hooks) {
     assert.equal(
       getSelectedTime(this.element),
       null,
-      'no time is selected by default'
+      'no time is selected by default',
     );
     assert.dom('button').hasText('Enter time...');
   });
@@ -50,7 +50,7 @@ module('Integration | Component | time-picker', function (hooks) {
     assert.dom('button').hasText(time.format('HH:mm'), 'Correct date is shown');
     assert.ok(
       compareTimes(getSelectedTime(this.element), time),
-      'getSelectedTime returns correct moment instance'
+      'getSelectedTime returns correct moment instance',
     );
   });
 
@@ -70,9 +70,9 @@ module('Integration | Component | time-picker', function (hooks) {
     assert.ok(
       compareTimes(
         getSelectedTime(this.element),
-        moment().set('hour', 8).set('minute', 30).startOf('minute')
+        moment().set('hour', 8).set('minute', 30).startOf('minute'),
       ),
-      'getSelectedTime returns correct moment instance'
+      'getSelectedTime returns correct moment instance',
     );
   });
 
@@ -103,7 +103,7 @@ module('Integration | Component | time-picker', function (hooks) {
       assert.equal(
         time.format('HH:mm'),
         '14:30',
-        'correct time is passed to action.'
+        'correct time is passed to action.',
       );
     };
 
@@ -129,12 +129,12 @@ module('Integration | Component | time-picker', function (hooks) {
       assert.equal(
         newTime.format('HH:mm'),
         '05:30',
-        'correct time is passed to action.'
+        'correct time is passed to action.',
       );
       assert.equal(
         this.defaultTime,
         time,
-        'original default time is not changed.'
+        'original default time is not changed.',
       );
     };
 
@@ -198,7 +198,7 @@ module('Integration | Component | time-picker', function (hooks) {
       .dom('.ember-basic-dropdown-trigger')
       .hasClass(
         'ember-basic-dropdown-trigger--in-place',
-        'The trigger has a special `--in-place` class'
+        'The trigger has a special `--in-place` class',
       );
   });
 
@@ -223,7 +223,7 @@ module('Integration | Component | time-picker', function (hooks) {
 
     assert.ok(
       compareTimes(getSelectedTime(this.element), time),
-      'getSelectedTime returns correct moment instance'
+      'getSelectedTime returns correct moment instance',
     );
   });
 });

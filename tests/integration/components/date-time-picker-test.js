@@ -172,7 +172,7 @@ module('Integration | Component | date-time-picker', function (hooks) {
       assert.equal(
         val.milliseconds(),
         today.milliseconds(),
-        'ms remain the same'
+        'ms remain the same',
       );
 
       assert.equal(val.year(), 2017, 'year is correct');
@@ -268,7 +268,7 @@ module('Integration | Component | date-time-picker', function (hooks) {
     assert.ok(
       this.value.format('YYYY-MM-DD HH:mm'),
       targetDate.format('YYYY-MM-DD HH:mm'),
-      'date is correctly updated'
+      'date is correctly updated',
     );
 
     assert.verifySteps(['onChange is called', 'onChange is called']);
@@ -285,7 +285,7 @@ module('Integration | Component | date-time-picker', function (hooks) {
         assert.equal(
           val.milliseconds(),
           today.milliseconds(),
-          'ms remain the same'
+          'ms remain the same',
         );
 
         assert.equal(val.year(), 2017, 'year is correct');

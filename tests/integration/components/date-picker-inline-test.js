@@ -14,7 +14,7 @@ module('Integration | Component | date-picker-inline', function (hooks) {
     this.onChange = function (newDate) {
       assert.ok(
         targetDate.isSame(newDate, 'day'),
-        'action is called with correct date'
+        'action is called with correct date',
       );
 
       assert.step('onChange is called');

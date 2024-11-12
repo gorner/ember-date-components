@@ -8,7 +8,7 @@
 .date-picker {
   padding: 15px;
   background: white;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
   border-radius: 3px;
   font-size: 16px;
 }
@@ -42,7 +42,6 @@
   box-shadow: none;
   outline: none;
   background: none;
-
   border: 1px solid #aaa;
   padding: 3px 15px;
   border-radius: 3px;
@@ -67,9 +66,9 @@
   width: 250px;
 }
 
-.date-picker__weekdays:after,
-.date-picker__calendar:after {
-  content: '';
+.date-picker__weekdays::after,
+.date-picker__calendar::after {
+  content: "";
   clear: left;
   display: block;
 }
@@ -97,10 +96,8 @@
   line-height: 2em;
   background-color: #eee;
   border-radius: 3px;
-
   border-color: white;
   border-style: solid;
-
   border-top-width: 1px;
   border-left-width: 1px;
 }
@@ -174,7 +171,7 @@
 .date-picker__options__button {
   display: block;
   width: 100%;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
 }
 
 /* Date Picker End */
@@ -212,6 +209,7 @@
   background: #1e90ff;
   color: white;
 }
+
 /* Month/Year Picker End */
 
 /* Time Picker Begin */
@@ -233,7 +231,7 @@
   width: 100%;
   max-height: 300px;
   background: #fff;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
   border-radius: 3px;
   font-size: 16px;
   overflow-y: auto;

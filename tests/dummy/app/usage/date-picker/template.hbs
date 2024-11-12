@@ -64,8 +64,8 @@
     as |selectedDates|>
     <button type='button'>
       Select me! Current value:
-      {{#if selectedDates.firstObject}}
-        {{moment-format selectedDates.firstObject 'L'}}
+      {{#if (get selectedDates "0")}}
+        {{moment-format (get selectedDates "0") 'L'}}
       {{else}}
         None
       {{/if}}
