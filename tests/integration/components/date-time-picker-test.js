@@ -28,16 +28,16 @@ module('Integration | Component | date-time-picker', function (hooks) {
     let today = moment();
 
     this.onChange = function (val) {
-      assert.equal(val.hours(), 14, 'hours are correct');
-      assert.equal(val.minutes(), 30, 'minutes are correct');
-      assert.equal(val.seconds(), 0, 'seconds are correct');
-      assert.equal(val.milliseconds(), 0, 'ms are correct');
+      assert.strictEqual(val.hours(), 14, 'hours are correct');
+      assert.strictEqual(val.minutes(), 30, 'minutes are correct');
+      assert.strictEqual(val.seconds(), 0, 'seconds are correct');
+      assert.strictEqual(val.milliseconds(), 0, 'ms are correct');
 
-      assert.equal(val.year(), today.year(), 'year remains the same');
-      assert.equal(val.month(), today.month(), 'month remains the same');
-      assert.equal(val.date(), today.date(), 'date remains the same');
+      assert.strictEqual(val.year(), today.year(), 'year remains the same');
+      assert.strictEqual(val.month(), today.month(), 'month remains the same');
+      assert.strictEqual(val.date(), today.date(), 'date remains the same');
 
-      assert.equal(this.value, today, 'the value is not modified');
+      assert.strictEqual(this.value, today, 'the value is not modified');
 
       assert.step('onChange is called');
     };
@@ -166,20 +166,28 @@ module('Integration | Component | date-time-picker', function (hooks) {
     let today = moment('2017-05-13');
 
     this.onChange = function (val) {
-      assert.equal(val.hours(), today.hours(), 'hours remain the same');
-      assert.equal(val.minutes(), today.minutes(), 'minutes remain the same');
-      assert.equal(val.seconds(), today.seconds(), 'seconds remain the same');
-      assert.equal(
+      assert.strictEqual(val.hours(), today.hours(), 'hours remain the same');
+      assert.strictEqual(
+        val.minutes(),
+        today.minutes(),
+        'minutes remain the same',
+      );
+      assert.strictEqual(
+        val.seconds(),
+        today.seconds(),
+        'seconds remain the same',
+      );
+      assert.strictEqual(
         val.milliseconds(),
         today.milliseconds(),
         'ms remain the same',
       );
 
-      assert.equal(val.year(), 2017, 'year is correct');
-      assert.equal(val.month(), 4, 'month is correct');
-      assert.equal(val.date(), 6, 'date is correct');
+      assert.strictEqual(val.year(), 2017, 'year is correct');
+      assert.strictEqual(val.month(), 4, 'month is correct');
+      assert.strictEqual(val.date(), 6, 'date is correct');
 
-      assert.equal(this.value, today, 'the value is not modified');
+      assert.strictEqual(this.value, today, 'the value is not modified');
 
       assert.step('onChange is called');
     };
@@ -204,14 +212,14 @@ module('Integration | Component | date-time-picker', function (hooks) {
     let today = moment();
 
     this.onChange = function (val) {
-      assert.equal(val.hours(), 0, 'hours defaults to 0');
-      assert.equal(val.minutes(), 0, 'minutes defaults to 0');
-      assert.equal(val.seconds(), 0, 'seconds defaults to 0');
-      assert.equal(val.milliseconds(), 0, 'ms defaults to 0');
+      assert.strictEqual(val.hours(), 0, 'hours defaults to 0');
+      assert.strictEqual(val.minutes(), 0, 'minutes defaults to 0');
+      assert.strictEqual(val.seconds(), 0, 'seconds defaults to 0');
+      assert.strictEqual(val.milliseconds(), 0, 'ms defaults to 0');
 
-      assert.equal(val.year(), today.year(), 'year is correct');
-      assert.equal(val.month(), today.month(), 'month is correct');
-      assert.equal(val.date(), today.date(), 'date is correct');
+      assert.strictEqual(val.year(), today.year(), 'year is correct');
+      assert.strictEqual(val.month(), today.month(), 'month is correct');
+      assert.strictEqual(val.date(), today.date(), 'date is correct');
 
       assert.step('onChange is called');
     };
@@ -243,7 +251,7 @@ module('Integration | Component | date-time-picker', function (hooks) {
     `);
 
     let datePicker = getDatePicker(this.element);
-    assert.equal(datePicker.buttonText(), today.format('L'));
+    assert.strictEqual(datePicker.buttonText(), today.format('L'));
   });
 
   test('setDateTime test helpers works', async function (assert) {
@@ -265,7 +273,7 @@ module('Integration | Component | date-time-picker', function (hooks) {
     let targetDate = moment().add(2, 'day').hours(5).minutes(30);
     await selectDateTime(this.element, targetDate);
 
-    assert.ok(
+    assert.strictEqual(
       this.value.format('YYYY-MM-DD HH:mm'),
       targetDate.format('YYYY-MM-DD HH:mm'),
       'date is correctly updated',
@@ -279,20 +287,28 @@ module('Integration | Component | date-time-picker', function (hooks) {
       let today = moment('2017-05-13');
 
       this.onChange = function (val) {
-        assert.equal(val.hours(), today.hours(), 'hours remain the same');
-        assert.equal(val.minutes(), today.minutes(), 'minutes remain the same');
-        assert.equal(val.seconds(), today.seconds(), 'seconds remain the same');
-        assert.equal(
+        assert.strictEqual(val.hours(), today.hours(), 'hours remain the same');
+        assert.strictEqual(
+          val.minutes(),
+          today.minutes(),
+          'minutes remain the same',
+        );
+        assert.strictEqual(
+          val.seconds(),
+          today.seconds(),
+          'seconds remain the same',
+        );
+        assert.strictEqual(
           val.milliseconds(),
           today.milliseconds(),
           'ms remain the same',
         );
 
-        assert.equal(val.year(), 2017, 'year is correct');
-        assert.equal(val.month(), 4, 'month is correct');
-        assert.equal(val.date(), 6, 'date is correct');
+        assert.strictEqual(val.year(), 2017, 'year is correct');
+        assert.strictEqual(val.month(), 4, 'month is correct');
+        assert.strictEqual(val.date(), 6, 'date is correct');
 
-        assert.equal(this.value, today, 'the value is not modified');
+        assert.strictEqual(this.value, today, 'the value is not modified');
 
         assert.step('onChange is called');
       };

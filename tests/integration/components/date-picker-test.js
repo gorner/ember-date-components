@@ -53,8 +53,12 @@ module('Integration | Component | date-picker', function (hooks) {
 
   test('action is sent on value change', async function (assert) {
     this.onChange = function (date) {
-      assert.equal(arguments.length, 1, 'one argument is passed to action.');
-      assert.equal(
+      assert.strictEqual(
+        arguments.length,
+        1,
+        'one argument is passed to action.',
+      );
+      assert.strictEqual(
         date.format('YYYY-MM-DD'),
         moment().date(7).format('YYYY-MM-DD'),
         'correct date is passed to action.',
@@ -84,7 +88,7 @@ module('Integration | Component | date-picker', function (hooks) {
     this.date = date;
 
     this.onChange = function (date) {
-      assert.equal(
+      assert.strictEqual(
         date.format('YYYY-MM-DD'),
         moment().date(7).format('YYYY-MM-DD'),
         'correct date is passed to action.',
@@ -103,7 +107,11 @@ module('Integration | Component | date-picker', function (hooks) {
     await datePicker.toggle();
     await datePicker.selectDate(moment().date(7));
 
-    assert.equal(this.date, date, 'original default date is not changed.');
+    assert.strictEqual(
+      this.date,
+      date,
+      'original default date is not changed.',
+    );
 
     assert.verifySteps(['onChange is called']);
   });
@@ -229,9 +237,13 @@ module('Integration | Component | date-picker', function (hooks) {
     };
 
     this.onClose = function (date) {
-      assert.equal(arguments.length, 1, 'one argument is passed to action.');
+      assert.strictEqual(
+        arguments.length,
+        1,
+        'one argument is passed to action.',
+      );
 
-      assert.equal(
+      assert.strictEqual(
         date.format('YYYY-MM-DD'),
         moment().date(7).format('YYYY-MM-DD'),
         'correct date is passed',
@@ -374,8 +386,6 @@ module('Integration | Component | date-picker', function (hooks) {
 
     this.onChange = () => {};
 
-    assert.expect(daysInMonth);
-
     await render(hbs`
     <DatePicker
       @onChange={{this.onChange}}
@@ -402,25 +412,30 @@ module('Integration | Component | date-picker', function (hooks) {
       let counter = 0;
 
       this.onChange = function (dates) {
-        assert.equal(arguments.length, 1, 'one argument is passed to action.');
-        assert.equal(getTypeOf(dates), 'array', 'array is passed');
+        assert.strictEqual(
+          arguments.length,
+          1,
+          'one argument is passed to action.',
+        );
+        assert.strictEqual(getTypeOf(dates), 'array', 'array is passed');
 
         let [from, to] = dates;
 
+        /* eslint-disable qunit/no-conditional-assertions */
         if (counter === 0) {
-          assert.equal(
+          assert.strictEqual(
             from.format('YYYY-MM-DD'),
             moment().date(7).format('YYYY-MM-DD'),
             'correct date is passed as from-date.',
           );
-          assert.equal(to, null, 'to-date is null');
+          assert.strictEqual(to, null, 'to-date is null');
         } else {
-          assert.equal(
+          assert.strictEqual(
             from.format('YYYY-MM-DD'),
             moment().date(7).format('YYYY-MM-DD'),
             'correct date is passed as from-date.',
           );
-          assert.equal(
+          assert.strictEqual(
             to.format('YYYY-MM-DD'),
             moment().date(14).format('YYYY-MM-DD'),
             'correct date is passed as to-date.',
@@ -458,12 +473,16 @@ module('Integration | Component | date-picker', function (hooks) {
 
     test('it allows selection of to-value without from-value', async function (assert) {
       this.onChange = function (dates) {
-        assert.equal(arguments.length, 1, 'one argument is passed to action.');
-        assert.equal(getTypeOf(dates), 'array', 'array is passed');
+        assert.strictEqual(
+          arguments.length,
+          1,
+          'one argument is passed to action.',
+        );
+        assert.strictEqual(getTypeOf(dates), 'array', 'array is passed');
 
         let [from, to] = dates;
-        assert.equal(from, null, 'from-date is null');
-        assert.equal(
+        assert.strictEqual(from, null, 'from-date is null');
+        assert.strictEqual(
           to.format('YYYY-MM-DD'),
           moment().date(7).format('YYYY-MM-DD'),
           'correct date is passed as to-date.',
@@ -491,16 +510,20 @@ module('Integration | Component | date-picker', function (hooks) {
       };
 
       this.onClose = function (dates) {
-        assert.equal(arguments.length, 1, 'one argument is passed to action.');
-        assert.equal(getTypeOf(dates), 'array', 'array is passed');
+        assert.strictEqual(
+          arguments.length,
+          1,
+          'one argument is passed to action.',
+        );
+        assert.strictEqual(getTypeOf(dates), 'array', 'array is passed');
 
         let [from, to] = dates;
-        assert.equal(
+        assert.strictEqual(
           from.format('YYYY-MM-DD'),
           moment().date(7).format('YYYY-MM-DD'),
           'correct date is passed as from-date.',
         );
-        assert.equal(
+        assert.strictEqual(
           to.format('YYYY-MM-DD'),
           moment().date(14).format('YYYY-MM-DD'),
           'correct date is passed as to-date.',
@@ -573,7 +596,7 @@ module('Integration | Component | date-picker', function (hooks) {
       let targetDate = moment().subtract(3, 'years');
 
       this.onChange = function (date) {
-        assert.equal(
+        assert.strictEqual(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
           'correct date is passed to action.',
@@ -602,7 +625,7 @@ module('Integration | Component | date-picker', function (hooks) {
       let targetDate = moment().add(3, 'years');
 
       this.onChange = function (date) {
-        assert.equal(
+        assert.strictEqual(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
           'correct date is passed to action.',
@@ -631,7 +654,7 @@ module('Integration | Component | date-picker', function (hooks) {
       let targetDate = moment().subtract(3, 'years');
 
       this.onChange = function (date) {
-        assert.equal(
+        assert.strictEqual(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
           'correct date is passed to action.',
@@ -657,7 +680,7 @@ module('Integration | Component | date-picker', function (hooks) {
       let targetDate = moment();
 
       this.onChange = function (date) {
-        assert.equal(
+        assert.strictEqual(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
           'correct date is passed to action.',
@@ -683,7 +706,7 @@ module('Integration | Component | date-picker', function (hooks) {
       let targetDate = moment().add(3, 'years');
 
       this.onChange = function (date) {
-        assert.equal(
+        assert.strictEqual(
           date.format('YYYY-MM-DD'),
           targetDate.format('YYYY-MM-DD'),
           'correct date is passed to action.',
@@ -729,7 +752,7 @@ module('Integration | Component | date-picker', function (hooks) {
     />`);
 
       let selectedDate = await getSelectedDate(this.element);
-      assert.equal(selectedDate, null);
+      assert.strictEqual(selectedDate, null);
     });
 
     test('getSelectedDate helper works with a range', async function (assert) {

@@ -137,8 +137,11 @@ let app = new EmberApp({
   it will automatically be added to your project (via the ember-basic-dropdown addon).
 </p>
 
+{{! the below usage is intentional }}
+{{! template-lint-disable no-potential-path-strings}}
 <CodeBlock @language="scss" @code='@import "ember-basic-dropdown";
 @import \"ember-date-components/addon\";' />
+{{! template-lint-enable no-potential-path-strings}}
 
 <p>
   This partial uses a few variables that you can set:

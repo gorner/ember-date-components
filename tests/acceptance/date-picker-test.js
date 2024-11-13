@@ -10,7 +10,7 @@ module('Acceptance | date picker', function (hooks) {
   test('visiting /date-picker', async function (assert) {
     await visit('/examples/date-picker');
 
-    assert.equal(currentURL(), '/examples/date-picker');
+    assert.strictEqual(currentURL(), '/examples/date-picker');
     assert.dom('#date1-output').hasText('', 'date 1 is empty');
     assert
       .dom('#date2-output')

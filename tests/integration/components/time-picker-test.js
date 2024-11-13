@@ -25,7 +25,7 @@ module('Integration | Component | time-picker', function (hooks) {
     assert
       .dom('.time-picker__dropdown')
       .doesNotExist('Dropdown is not shown by default');
-    assert.equal(
+    assert.strictEqual(
       getSelectedTime(this.element),
       null,
       'no time is selected by default',
@@ -96,11 +96,13 @@ module('Integration | Component | time-picker', function (hooks) {
   });
 
   test('action is sent on value change', async function (assert) {
-    assert.expect(3);
-
     this.onChange = function (time) {
-      assert.equal(arguments.length, 1, 'one argument is passed to action.');
-      assert.equal(
+      assert.strictEqual(
+        arguments.length,
+        1,
+        'one argument is passed to action.',
+      );
+      assert.strictEqual(
         time.format('HH:mm'),
         '14:30',
         'correct time is passed to action.',
@@ -120,18 +122,16 @@ module('Integration | Component | time-picker', function (hooks) {
   });
 
   test('default value is not mutated after change of time', async function (assert) {
-    assert.expect(2);
-
     let time = moment(0).hours(4).minutes(30);
     this.defaultTime = time;
 
     this.onChange = (newTime) => {
-      assert.equal(
+      assert.strictEqual(
         newTime.format('HH:mm'),
         '05:30',
         'correct time is passed to action.',
       );
-      assert.equal(
+      assert.strictEqual(
         this.defaultTime,
         time,
         'original default time is not changed.',

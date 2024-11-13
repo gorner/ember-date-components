@@ -6,7 +6,7 @@ module('Unit | Helper | date picker day classes', function () {
     let baseClass = 'base';
     let options = {};
     let result = datePickerDayClasses([baseClass], options);
-    assert.equal(result, 'base');
+    assert.strictEqual(result, 'base');
   });
 
   test('all settings work together', function (assert) {
@@ -18,7 +18,7 @@ module('Unit | Helper | date picker day classes', function () {
       isInRange: true,
     };
     let result = datePickerDayClasses([baseClass], options);
-    assert.equal(
+    assert.strictEqual(
       result,
       'base base--today base--selected base--disabled base--in-range',
     );
@@ -30,6 +30,6 @@ module('Unit | Helper | date picker day classes', function () {
       isDisabled: true,
     };
     let result = datePickerDayClasses([baseClass], options);
-    assert.equal(result, 'base base--disabled');
+    assert.strictEqual(result, 'base base--disabled');
   });
 });
