@@ -101,7 +101,10 @@
     "date-range-picker",
     "datepicker"
   ],
-  "repository": "https://github.com/gorner/ember-date-components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorner/ember-date-components.git"
+  },
   "license": "MIT",
   "author": "Francesco Novy <francesconovy@gmail.com>",
   "directories": {
