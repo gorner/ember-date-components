@@ -1,7 +1,6 @@
 import { click, find } from '@ember/test-helpers';
 import moment from 'moment';
-import { assert } from '@ember/debug';
-import { deprecate } from '@ember/application/deprecations';
+import { assert, deprecate } from '@ember/debug';
 import { selectTime } from './time-picker';
 
 export function getDatePicker(element) {
@@ -11,15 +10,15 @@ export function getDatePicker(element) {
 
   assert(
     'getDatePicker is passed a DOM node or a matching selector string',
-    !!element
+    !!element,
   );
   assert(
     'getDatePicker does not support jQuery elements, only plain DOM nodes or a text selector',
-    typeof element.length === 'undefined'
+    typeof element.length === 'undefined',
   );
 
   let [button, buttonTo] = element.querySelectorAll(
-    '[data-test-date-picker-toggle-button]'
+    '[data-test-date-picker-toggle-button]',
   );
 
   return {
@@ -43,10 +42,10 @@ export function getDatePicker(element) {
 
     currentMonth() {
       let month = find('[data-test-date-picker-month]').getAttribute(
-        'data-test-date-picker-month'
+        'data-test-date-picker-month',
       );
       let year = find('[data-test-date-picker-year]').getAttribute(
-        'data-test-date-picker-year'
+        'data-test-date-picker-year',
       );
       return moment(`${year}-${month}-01`);
     },
@@ -108,7 +107,7 @@ export async function setTimePickerValue() {
     {
       id: 'ember-date-components.test-support.helpers.date-picker',
       until: '3.0.0',
-    }
+    },
   );
 
   return selectTime(...arguments);
@@ -134,7 +133,7 @@ export async function getSelectedDate(element) {
   let button = datePicker.buttonElement;
   let buttonTo = datePicker.buttonToElement;
   let format = button.getAttribute(
-    'data-test-date-picker-toggle-button-format'
+    'data-test-date-picker-toggle-button-format',
   );
 
   let value = button.innerText.trim();

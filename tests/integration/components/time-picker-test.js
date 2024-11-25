@@ -6,7 +6,7 @@ import moment from 'moment';
 import {
   selectTime,
   getSelectedTime,
-} from 'ember-date-components/test-support/helpers/time-picker';
+} from '@gorner/ember-date-components/test-support/helpers/time-picker';
 import { compareTimes } from 'dummy/tests/helpers/compare-times';
 
 module('Integration | Component | time-picker', function (hooks) {
@@ -25,10 +25,10 @@ module('Integration | Component | time-picker', function (hooks) {
     assert
       .dom('.time-picker__dropdown')
       .doesNotExist('Dropdown is not shown by default');
-    assert.equal(
+    assert.strictEqual(
       getSelectedTime(this.element),
       null,
-      'no time is selected by default'
+      'no time is selected by default',
     );
     assert.dom('button').hasText('Enter time...');
   });
@@ -40,17 +40,17 @@ module('Integration | Component | time-picker', function (hooks) {
     this.defaultTime = time;
 
     await render(hbs`
-      <TimePicker 
-        @value={{this.defaultTime}} 
-        @amPm={{false}} 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @value={{this.defaultTime}}
+        @amPm={{false}}
+        @onChange={{this.onChange}}
       />
     `);
 
     assert.dom('button').hasText(time.format('HH:mm'), 'Correct date is shown');
     assert.ok(
       compareTimes(getSelectedTime(this.element), time),
-      'getSelectedTime returns correct moment instance'
+      'getSelectedTime returns correct moment instance',
     );
   });
 
@@ -59,10 +59,10 @@ module('Integration | Component | time-picker', function (hooks) {
     this.defaultTime = '08:30';
 
     await render(hbs`
-      <TimePicker 
-        @value={{this.defaultTime}} 
-        @amPm={{false}} 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @value={{this.defaultTime}}
+        @amPm={{false}}
+        @onChange={{this.onChange}}
       />
     `);
 
@@ -70,9 +70,9 @@ module('Integration | Component | time-picker', function (hooks) {
     assert.ok(
       compareTimes(
         getSelectedTime(this.element),
-        moment().set('hour', 8).set('minute', 30).startOf('minute')
+        moment().set('hour', 8).set('minute', 30).startOf('minute'),
       ),
-      'getSelectedTime returns correct moment instance'
+      'getSelectedTime returns correct moment instance',
     );
   });
 
@@ -83,10 +83,10 @@ module('Integration | Component | time-picker', function (hooks) {
     this.defaultTime = time;
 
     await render(hbs`
-      <TimePicker 
-        @value={{this.defaultTime}} 
-        @amPm={{true}} 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @value={{this.defaultTime}}
+        @amPm={{true}}
+        @onChange={{this.onChange}}
       />
     `);
 
@@ -96,20 +96,22 @@ module('Integration | Component | time-picker', function (hooks) {
   });
 
   test('action is sent on value change', async function (assert) {
-    assert.expect(3);
-
     this.onChange = function (time) {
-      assert.equal(arguments.length, 1, 'one argument is passed to action.');
-      assert.equal(
+      assert.strictEqual(
+        arguments.length,
+        1,
+        'one argument is passed to action.',
+      );
+      assert.strictEqual(
         time.format('HH:mm'),
         '14:30',
-        'correct time is passed to action.'
+        'correct time is passed to action.',
       );
     };
 
     await render(hbs`
-      <TimePicker 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @onChange={{this.onChange}}
       />
     `);
 
@@ -120,28 +122,26 @@ module('Integration | Component | time-picker', function (hooks) {
   });
 
   test('default value is not mutated after change of time', async function (assert) {
-    assert.expect(2);
-
     let time = moment(0).hours(4).minutes(30);
     this.defaultTime = time;
 
     this.onChange = (newTime) => {
-      assert.equal(
+      assert.strictEqual(
         newTime.format('HH:mm'),
         '05:30',
-        'correct time is passed to action.'
+        'correct time is passed to action.',
       );
-      assert.equal(
+      assert.strictEqual(
         this.defaultTime,
         time,
-        'original default time is not changed.'
+        'original default time is not changed.',
       );
     };
 
     await render(hbs`
-      <TimePicker 
-        @value={{this.defaultTime}} 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @value={{this.defaultTime}}
+        @onChange={{this.onChange}}
       />
     `);
 
@@ -156,9 +156,9 @@ module('Integration | Component | time-picker', function (hooks) {
     this.onChange = () => {};
 
     await render(hbs`
-      <TimePicker 
-        @value={{this.defaultTime}} 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @value={{this.defaultTime}}
+        @onChange={{this.onChange}}
       />
     `);
 
@@ -175,9 +175,9 @@ module('Integration | Component | time-picker', function (hooks) {
     this.onChange = () => {};
 
     await render(hbs`
-      <TimePicker 
-        @value={{this.defaultTime}} 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @value={{this.defaultTime}}
+        @onChange={{this.onChange}}
       />
     `);
 
@@ -188,9 +188,9 @@ module('Integration | Component | time-picker', function (hooks) {
     this.onChange = () => {};
 
     await render(hbs`
-      <TimePicker 
-        @renderInPlace={{true}} 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @renderInPlace={{true}}
+        @onChange={{this.onChange}}
       />
     `);
 
@@ -198,7 +198,7 @@ module('Integration | Component | time-picker', function (hooks) {
       .dom('.ember-basic-dropdown-trigger')
       .hasClass(
         'ember-basic-dropdown-trigger--in-place',
-        'The trigger has a special `--in-place` class'
+        'The trigger has a special `--in-place` class',
       );
   });
 
@@ -209,10 +209,10 @@ module('Integration | Component | time-picker', function (hooks) {
     this.defaultTime = time;
 
     await render(hbs`
-      <TimePicker 
-        @value={{this.defaultTime}} 
-        @amPm={{false}} 
-        @onChange={{this.onChange}} 
+      <TimePicker
+        @value={{this.defaultTime}}
+        @amPm={{false}}
+        @onChange={{this.onChange}}
       as |opts|>
         <button type='button' id='test-1-button'>{{opts.displayValue}}</button>
       </TimePicker>
@@ -223,7 +223,7 @@ module('Integration | Component | time-picker', function (hooks) {
 
     assert.ok(
       compareTimes(getSelectedTime(this.element), time),
-      'getSelectedTime returns correct moment instance'
+      'getSelectedTime returns correct moment instance',
     );
   });
 });

@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { A as array } from '@ember/array';
 import { typeOf as getTypeOf } from '@ember/utils';
-import { next } from '@ember/runloop';
+import { runTask } from 'ember-lifeline';
 import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import moment from 'moment';
@@ -243,7 +243,7 @@ export default class DatePicker extends Component {
     assert(
       '<DatePicker>: You have to specify @onChange or @onClose',
       typeof this.args.onChange === 'function' ||
-        typeof this.args.onClose === 'function'
+        typeof this.args.onClose === 'function',
     );
 
     this.valueDidUpdate();
@@ -283,7 +283,7 @@ export default class DatePicker extends Component {
 
     assert(
       `<DatePicker>: option has no valid action defined`,
-      typeof this[action] === 'function'
+      typeof this[action] === 'function',
     );
 
     this[action](actionValue);
@@ -335,7 +335,7 @@ export default class DatePicker extends Component {
     let selectedButton =
       datePickerDropdown &&
       datePickerDropdown.querySelector(
-        '[data-date-picker-day].date-picker__day--selected'
+        '[data-date-picker-day].date-picker__day--selected',
       );
     let firstButton =
       datePickerDropdown &&
@@ -355,7 +355,7 @@ export default class DatePicker extends Component {
       originallyFocusedElement &&
       document.body.contains(originallyFocusedElement)
     ) {
-      next(() => originallyFocusedElement.focus());
+      runTask(this, () => originallyFocusedElement.focus(), 0);
     }
   }
 

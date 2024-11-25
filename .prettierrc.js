@@ -1,6 +1,13 @@
 'use strict';
 
 module.exports = {
-  singleQuote: true,
-  arrowParens: 'always',
+  overrides: [
+    {
+      files: '*.{js,ts}',
+      options: {
+        singleQuote: true,
+        arrowParens: 'always',
+      },
+    },
+  ],
 };

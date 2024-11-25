@@ -1,1 +1,1 @@
-export { default } from 'ember-date-components/components/date-picker-inline';
+export { default } from '@gorner/ember-date-components/components/date-picker-inline';

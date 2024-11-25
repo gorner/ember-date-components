@@ -1,7 +1,7 @@
 import { click, triggerKeyEvent, fillIn, find } from '@ember/test-helpers';
 import moment from 'moment';
 import { assert } from '@ember/debug';
-import parseTime from 'ember-date-components/utils/parse-time';
+import parseTime from '@gorner/ember-date-components/utils/parse-time';
 
 export async function selectTime(element, val) {
   if (typeof element === 'string') {
@@ -10,7 +10,7 @@ export async function selectTime(element, val) {
 
   assert(
     'selectTime is passed a DOM node or a matching selector string',
-    !!element
+    !!element,
   );
 
   let timePickerButton = element.hasAttribute('data-time-picker-toggle-button')
@@ -18,7 +18,7 @@ export async function selectTime(element, val) {
     : element.querySelector('[data-time-picker-toggle-button]');
 
   let elementId = timePickerButton.getAttribute(
-    'data-time-picker-toggle-button'
+    'data-time-picker-toggle-button',
   );
 
   await click(timePickerButton);
@@ -39,7 +39,7 @@ export function getSelectedTime(element) {
 
   assert(
     'getSelectedTime is passed a DOM node or a matching selector string',
-    !!element
+    !!element,
   );
 
   let timePickerButton = element.hasAttribute('data-time-picker-toggle-button')

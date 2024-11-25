@@ -2,13 +2,14 @@
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
-  let app = new EmberAddon(defaults, {
+  const app = new EmberAddon(defaults, {
     sassOptions: {},
     'ember-bootstrap': {
       importBootstrapTheme: true,
       bootstrapVersion: 4,
       importBootstrapCSS: false,
-      whitelist: ['bs-nav', 'bs-navbar', 'bs-dropdown', 'bs-collapse'],
+      include: ['bs-nav', 'bs-navbar', 'bs-dropdown', 'bs-collapse'],
+      insertEmberWormholeElementToDom: false,
     },
     'ember-prism': {
       theme: 'twilight',
@@ -35,5 +36,11 @@ module.exports = function (defaults) {
   */
 
   const { maybeEmbroider } = require('@embroider/test-setup');
-  return maybeEmbroider(app);
+  return maybeEmbroider(app, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };

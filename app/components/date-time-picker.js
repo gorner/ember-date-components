@@ -1,1 +1,1 @@
-export { default } from 'ember-date-components/components/date-time-picker';
+export { default } from '@gorner/ember-date-components/components/date-time-picker';

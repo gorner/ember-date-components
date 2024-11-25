@@ -1,4 +1,4 @@
-import { isEqual } from 'dummy/helpers/is-equal';
+import { isEqual } from '@gorner/ember-date-components/helpers/is-equal';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | is equal', function () {

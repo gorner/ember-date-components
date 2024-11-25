@@ -1,4 +1,4 @@
 export {
   default,
   isEqualYear,
-} from 'ember-date-components/helpers/is-equal-year';
+} from '@gorner/ember-date-components/helpers/is-equal-year';

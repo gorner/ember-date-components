@@ -1,9 +1,9 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import moment from 'moment';
-import parseTime from 'ember-date-components/utils/parse-time';
-import buildTimeRange from 'ember-date-components/utils/build-time-range';
-import { shouldUseAmPm } from 'ember-date-components/utils/should-use-am-pm';
+import parseTime from '@gorner/ember-date-components/utils/parse-time';
+import buildTimeRange from '@gorner/ember-date-components/utils/build-time-range';
+import { shouldUseAmPm } from '@gorner/ember-date-components/utils/should-use-am-pm';
 import { guidFor } from '@ember/object/internals';
 import { tracked } from '@glimmer/tracking';
 import { assert } from '@ember/debug';
@@ -121,7 +121,7 @@ export default class TimePicker extends Component {
 
     assert(
       '<TimePicker>: You have to specify @onChange',
-      typeof this.args.onChange === 'function'
+      typeof this.args.onChange === 'function',
     );
   }
 
@@ -145,7 +145,7 @@ export default class TimePicker extends Component {
     let optionsLength = this.filteredOptions.length;
     this.selectedOptionIndex = Math.min(
       this.selectedOptionIndex + 1,
-      optionsLength - 1
+      optionsLength - 1,
     );
   }
 

@@ -1,7 +1,7 @@
 import { currentURL, visit } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
-import { getDatePicker } from 'ember-date-components/test-support/helpers/date-picker';
+import { getDatePicker } from '@gorner/ember-date-components/test-support/helpers/date-picker';
 import moment from 'moment';
 
 module('Acceptance | date picker', function (hooks) {
@@ -10,7 +10,7 @@ module('Acceptance | date picker', function (hooks) {
   test('visiting /date-picker', async function (assert) {
     await visit('/examples/date-picker');
 
-    assert.equal(currentURL(), '/examples/date-picker');
+    assert.strictEqual(currentURL(), '/examples/date-picker');
     assert.dom('#date1-output').hasText('', 'date 1 is empty');
     assert
       .dom('#date2-output')
