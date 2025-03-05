@@ -1,6 +1,6 @@
 {
   "name": "@gorner/ember-date-components",
-  "version": "5.0.0-alpha.0",
+  "version": "5.0.0-alpha.1",
   "description": "An Ember add-on which provides pure Ember-based date picker components.",
   "scripts": {
     "build": "ember build --environment=production",
