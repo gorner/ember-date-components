@@ -989,6 +989,16 @@
     ember-cli-babel "^7.26.11"
     ember-modifier-manager-polyfill "^1.2.0"
 
+"@ember/render-modifiers@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ember/render-modifiers/-/render-modifiers-3.0.0.tgz#3f046ee6dc35ebccf86a50aeb48c63ad58217c00"
+  integrity sha512-gJztS8dI7Jt8ohFQptEDJAgpl9DG84IpqwQoR1JDpVIBy2uLbf8KFD6S3h3LfyMsgJce6G38cOvyQv6BDgcnsA==
+  dependencies:
+    "@babel/core" "^7.25.2"
+    "@embroider/macros" "^1.0.0"
+    ember-cli-babel "^8.2.0"
+    ember-modifier-manager-polyfill "^1.2.0"
+
 "@ember/string@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@ember/string/-/string-4.0.0.tgz#24fe5cda227c9e6634e6e0b550944a3a13437878"
