@@ -1,8 +1,12 @@
 # Changelog
 
+v5.0.0-alpha.1
+
+- [INTERNAL] Update `@ember/render-modifiers` to v3 [#2](https://github.com/gorner/ember-date-components/pull/2)
+
 v5.0.0-alpha.0
 
-- [INTERNAL] Update dependencies
+- [INTERNAL] Update dependencies [#1](https://github.com/gorner/ember-date-components/pull/1)
 - [BREAKING] Require Ember v4.12+ and ember-basic-dropdown v8+; see README for more information.
 - [BREAKING] If you used the original ember-date-components, you will need to update any `import` statements to use `from '@gorner/ember-date-components/...';`.
 
